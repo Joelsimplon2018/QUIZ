@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import api from "./utils/api";
+
+import api from "./utils/api";
 
 import Home from "./pages/home";
 
@@ -8,6 +9,8 @@ export default props => {
   const dispatch = useDispatch();
   const isLoaded = useSelector(state => state.app.isLoaded);
   const [playerName, setPlayerName] = useState(null);
+
+  console.log(config);
 
   useEffect(() => {
     dispatch({ type: "SET_LOADED" });
